@@ -10,6 +10,7 @@ function App() {
   const [markerPosition, setMarkerPosition] = useState(null);
   const [infoWindowContent, setInfoWindowContent] = useState(null);
   const useCenterDet = useRef(false);
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   const handlePlaceSelected = (coords, address) => {
     useCenterDet.current = true;
@@ -29,7 +30,7 @@ function App() {
   };
 
   return (
-    <APIProvider apiKey="AIzaSyDSSgQOameE5y4wrB1v-4GWpTsmiRg2pVE">
+    <APIProvider apiKey={apiKey}>
       <div>
         <h1>MAP Challenge</h1>
         <h3>By Enrico Radcliffe</h3>
